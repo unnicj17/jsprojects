@@ -1,2 +1,2 @@
-# jsprojects
-JS learning projects
+## JavaScript Projects
+  #drumkit
