@@ -1,0 +1,39 @@
+html {
+	background: url(http://jllsly.com/wallpapers/xgalaxy-tumblr-wallpaper-desktop-background-Is-Cool-Wallpapers.jpg.pagespeed.ic.hJwNeQCPR8.webp) no-repeat center fixed;
+	background-size: cover;
+}
+.keys {
+	margin: auto;
+	padding: 2px;
+	display: inline-block;
+	position: fixed;
+}
+
+.key {
+	border: 2px solid black;
+	border-radius: 5px;
+	color: white;
+	background: rgba(0,0,0,0.4);
+	text-shadow: 0 0 5px black;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	padding: 10px;
+	transition: all 0.07s;
+}
+.playing {
+	transform: scale(1.1);
+	border-color: yellow;
+	box-shadow: 0 0 10px yellow;
+}
+
+kbd {
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+}
+
+span {
+	text-align: center;
+	display: block;
+}

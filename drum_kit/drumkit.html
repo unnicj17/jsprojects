@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS DRUM KIT</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="keys">
+		<div data-key="65" class="key">
+			<kbd>A</kbd>
+			<span class="sound">clap</span>
+		</div>
+		<div data-key="83" class="key">
+			<kbd>S</kbd>
+			<span class="sound">hihat</span>
+		</div>
+		<div data-key="68" class="key">
+			<kbd>D</kbd>
+			<span class="sound">kick</span>
+		</div>
+		<div data-key="70" class="key">
+			<kbd>F</kbd>
+			<span class="sound">openhat</span>
+		</div>
+		<div data-key="71" class="key">
+			<kbd>G</kbd>
+			<span class="sound">boom</span>
+		</div>
+		<div data-key="72" class="key">
+			<kbd>H</kbd>
+			<span class="sound">ride</span>
+		</div>
+		<div data-key="74" class="key">
+			<kbd>J</kbd>
+			<span class="sound">snare</span>
+		</div>
+		<div data-key="75" class="key">
+			<kbd>K</kbd>
+			<span class="sound">tom</span>
+		</div>
+		<div data-key="76" class="key">
+			<kbd>L</kbd>
+			<span class="sound">tink</span>
+		</div>
+
+	</div>
+	<audio data-key="65" src="http://freesound.org/data/previews/24/24786_165785-lq.mp3"></audio>
+	<audio data-key="83" src="http://freesound.org/data/previews/207/207914_19852-lq.mp3"></audio>
+	<audio data-key="68" src="http://freesound.org/data/previews/344/344761_1676145-lq.mp3"></audio>
+	<audio data-key="70" src="http://freesound.org/data/previews/272/272460_2278554-lq.mp3"></audio>
+	<audio data-key="71" src="http://freesound.org/data/previews/86/86330_377011-lq.mp3"></audio>
+	<audio data-key="72" src="http://freesound.org/data/previews/425/425449_7628248-lq.mp3"></audio>
+	<audio data-key="74" src="http://freesound.org/data/previews/381/381982_4766646-lq.mp3"></audio>
+	<audio data-key="75" src="http://freesound.org/data/previews/328/328605_2050105-lq.mp3"></audio>
+	<audio data-key="76" src="http://freesound.org/data/previews/178/178660_717950-lq.mp3"></audio>
+</body>
+<script>
+		function playAudio(e){
+			const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+			if(!audio) return;
+			const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+			key.classList.add('playing');
+			audio.currentTime = 0;
+			audio.play();
+		}
+
+		window.addEventListener('keydown',playAudio);
+		function removeTransition(e){
+			if(e.propertyName!='transform') return;
+			this.classList.remove('playing');
+		}
+		const keys = document.querySelectorAll(".key");
+		keys.forEach(key=>key.addEventListener('transitionend',removeTransition));
+</script>
+</html>
