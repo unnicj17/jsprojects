@@ -1,0 +1,52 @@
+html {
+	background: url(http://jllsly.com/wallpapers/xgalaxy-tumblr-wallpaper-desktop-background-Is-Cool-Wallpapers.jpg.pagespeed.ic.hJwNeQCPR8.webp) no-repeat center fixed;
+	background-size: cover;
+	text-align: center;
+}
+
+.container {
+	border: 2px solid black;
+	border-radius: 5px;
+	background: rgba(0,0,0,0.4);
+	padding: 10px;
+	height: 400px;
+	width:300px;
+	display: inline-block;
+}
+
+.clock {
+	border-radius: 50%;
+	align-self: center;
+	margin: auto;
+	vertical-align: middle;
+}
+.outer{
+	border: 10px solid white;
+	height: 200px;
+	width: 200px;
+	margin: auto;
+	background: rgba(.1,.1,.1,.7);
+	text-align: center;
+	position: relative;
+}
+.hand {
+	height: 1px;
+	background: white;
+	display: block;
+	position: absolute;
+	margin-left: 100px;
+	margin-top: 100px;
+	transform-origin: 0% 100%;
+}
+.second{
+	width: 90px;
+	z-index: -1px;
+}
+.minute{
+	width: 85px;
+	z-index: -7px;
+}
+.hour{
+	width: 70px;
+	z-index: -10px;
+}
